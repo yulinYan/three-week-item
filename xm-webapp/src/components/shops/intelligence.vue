@@ -1,7 +1,7 @@
 <template>
     <div>
-        <intelligence-banner></intelligence-banner>
-         <intelligence_list></intelligence_list>
+        <intelligence-banner v-if="data" :data="data"></intelligence-banner>
+         <intelligence_list v-if="data" :data="data.listPic"></intelligence_list>
     </div>
 </template>
 
@@ -13,8 +13,12 @@
         components:{
             "intelligence-banner":banner,
             // eslint-disable-next-line vue/no-unused-components
-            intelligence_list
-        }
+            intelligence_list,
+            // eslint-disable-next-line vue/no-unused-components
+
+    },
+        props:['data']
+
     }
 </script>
 

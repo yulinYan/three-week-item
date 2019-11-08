@@ -1,8 +1,8 @@
 <template>
     <div>
-
-        <router-view></router-view>
         <xm-footer></xm-footer>
+        <router-view></router-view>
+
     </div>
 </template>
 

@@ -34,6 +34,9 @@
         display: flex;
         justify-content: space-around;
         text-align: center;
+        z-index: 100;
+        background-color: #fff;
+        padding-top: 0.05rem;
     }
     .footer span{
         display: block;
