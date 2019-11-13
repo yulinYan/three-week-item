@@ -35,18 +35,18 @@
             this._initSwiper()
         },
         methods: {
-            _initSwiper() {
-                new Swiper(".swiper-container", {
-                    // direction: "vertical",
-                    // effect: "flip",
+                _initSwiper() {
+                    new Swiper(".swiper-container", {
+                        // direction: "vertical",
+                        // effect: "flip",
 
-                    // 如果需要分页器
-                    pagination: {
-                        el: ".swiper-pagination"
-                    }
+                        // 如果需要分页器
+                        pagination: {
+                            el: ".swiper-pagination"
+                        }
 
-                })
-            }
+                    })
+                }
         }
     }
 

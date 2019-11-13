@@ -50,6 +50,8 @@
         height: 0.2084rem;
 
     }
+
+    /*让选中的字变颜色*/
     .footer a.router-link-active{
         color: #F56D02;
     }

@@ -4,7 +4,16 @@
 
     <div class="header">
         <div class="header_1"><img src="../assets/images/mine/header1.png" alt=""></div>
-        <div class="header_2"><span class="login">登录</span><span>/</span ><span class="register">注册</span></div>
+
+            <div class="header_2">
+                <a href="#/login">
+                    <span class="login">登录</span>
+                </a>
+                    <span>/</span >
+                <a href="#">
+                    <span class="register">注册</span>
+                </a>
+            </div>
 
     </div>
 

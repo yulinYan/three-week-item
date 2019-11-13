@@ -1,4 +1,7 @@
-const HOMEURL = 'http://127.0.0.1:3000/xiaoMi'
+const HOMEURL = 'http://10.35.167.54:3000/xiaoMi'
+// 192.168.0.114
+// 101.200.219.118
+// 10.35.167.54
 export default {
 
     /**
@@ -8,6 +11,7 @@ export default {
         let res = await fetch(HOMEURL)
         let data = await res.json()
         return data
-    }
+    },
+
 
 }

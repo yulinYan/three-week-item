@@ -37,7 +37,7 @@
                 // eslint-disable-next-line no-undef
                 let data = await homeApi.getHomeInfo();
                 this.homeInfo = data;
-                console.log(data)
+                // console.log(data)
             }
         }
     }

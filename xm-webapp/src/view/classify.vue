@@ -1,6 +1,6 @@
 <template>
     <div>
-        <xm-classify-header></xm-classify-header>
+        <xm-classify-header class="top"></xm-classify-header>
         <xm-classify-product v-if="classifyInit" :data="classifyInit.classify"></xm-classify-product>
     </div>
 </template>
@@ -41,5 +41,7 @@
 </script>
 
 <style scoped>
-
+/*.top{*/
+/*    z-index: 1000;*/
+/*}*/
 </style>

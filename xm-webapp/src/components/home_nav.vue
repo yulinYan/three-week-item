@@ -1,12 +1,18 @@
 <template>
     <div class="h-nav-boss">
         <div class="h-nav">
+            <div class="h-nav-show-more">
+                <div class="nav-show"   @click="show=!show" :class="{tip:show===false}" ><img src="../assets/images/header4.png" alt=""></div>
+            </div>
+
+<!--            点击nav-show 之前 show=true  显示这个样式   -->
             <div class="h-nav-l-row" v-if="show">
                 <div class="h-nav-item" @click="styleItem(n,h)" :key="h" v-for="(n,h) in arrlist">
                     <span :class="{cheched_item:i===h}">{{n.name}}</span>
                 </div>
 
             </div>
+<!--            点击nav-show之后 为false  显示第二个样式（下面的div）-->
             <div class="h-nav-l-list" v-else >
                 <h4>全部</h4>
                 <div class="h-nav-l-list-n">
@@ -19,9 +25,7 @@
 
             </div>
             <div class="mask" v-if="show==false"></div>
-            <div class="h-nav-show-more">
-                <div class="nav-show"   @click="show=!show" :class="{tip:show===false}" ><img src="../assets/images/header4.png" alt=""></div>
-            </div>
+
         </div>
 
 

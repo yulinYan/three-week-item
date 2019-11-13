@@ -9,11 +9,15 @@ import classify from "../view/classify";
 import mine from "../view/mine";
 import cart from "../view/cart";
 import main from "../view/main";
+import dist from "../view/details";
+import login from "../components/login";
 
 Vue.use(VueRouter)
 let router = new VueRouter({
     routes:[
         {path:'/',redirect:'/main/home'},
+        {path: '/dist:id', component: dist},
+        {path:'/login', component:login},
         {
             path:'/main',
             component:main,

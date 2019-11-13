@@ -1,7 +1,7 @@
 <template>
     <div class="c_boss">
         <div class="back"><img src="../../assets/images/classify/top-more.png" alt=""></div>
-        <div class="text"> 分类</div>
+        <div class="text"> 购物车</div>
         <div class="seach"><img src="../../assets/images/classify/search.png" alt=""></div>
 
     </div>
@@ -9,7 +9,7 @@
 
 <script>
     export default {
-        name: "vheader"
+        name: "cheader"
     }
 </script>
 
@@ -23,7 +23,6 @@
     align-items: center;
     padding: 0 0.1rem;
     background-color: #F2F2F2;
-    z-index: 1000;
 }
 .back img{
     width: 0.26rem;

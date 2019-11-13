@@ -3,17 +3,18 @@
         <div class="classify_list">
             <ul class="list-ul">
                 <li class="list_title"><span>新品</span></li>
-<!--                :class="index==0?'catgCurrent':''"-->
-                <li class="xm_type catg-list-nav-cur"  v-for="(n,index) in data.xm_type" :key="index">{{n.name}}</li>
+<!--                -->
+                <li class="xm_type catg-list-nav-cur" :class="index==0?'catgCurrent':''"  @click="jump(index)" v-for="(n,index) in data.product" :key="index">{{n.title}}</li>
             </ul>
+
         </div>
         <div class="classify_product">
             <div class="classify_product_s" >
                 <div class="right catg-item-main" v-for="(item,index) in data.product"  :key="index">
                     <div>
-                        <img :src="data.title_pic">
+                        <img :src="item.title_pic">
                     </div>
-                    <div v-for="(n,index) in data.xm_type" :key="index">
+                    <div  class="go_jump">
                         <div class="type" >
                             <span >{{item.title}}</span>
                         </div>
@@ -34,78 +35,60 @@
 </template>
 
 <script>
+
     // eslint-disable-next-line no-unused-vars
     import $ from 'jquery'
     export default {
         name: "classify_product",
-        data(){
-            return{
-                 scroll:'',
-                // top:'',
-                length:''
-
+        data() {
+            return {
+                scroll: '',
             }
         },
-        props:['data'],
-        methods:{
-            dataScroll: function () {
-                this.scroll = document.documentElement.scrollTop || document.body.scrollTop;
-                console.log(666)
-
-            },
-            _getType_title:function () {
-                console.log(888)
-                let top=document.getElementsByClassName("type");
-                for(let i=0;i<top.length;i++){
-                    this.length = top[i].offsetTop;
-                    console.log(this.length)
-                    // eslint-disable-next-line no-unused-vars
-                    var $navs = $(".catg-list-nav-cur");
-                    // eslint-disable-next-line no-empty
-                    if(this.length<500){
-                        $navs.eq(i).addClass("catgCurrent").siblings().removeClass("catgCurrent")
+        props: ['data'],
+        methods: {
+            _getType_title: function () {
+                var self = this;
+                var top = document.getElementsByClassName("catg-item-main");
+                for (let i =top.length-1; i>=0; i--) {
+                    var length = top[i].offsetTop;
+                    console.log(length)
+                    // sections[i].offsetTop
+                    if (self.scroll >= length - 200) {
+                        var navs = $(".catg-list-nav-cur");
+                        navs.eq(i).addClass("catgCurrent").siblings().removeClass("catgCurrent")
+                        break;
                     }
                 }
-            }
-
-            // loadSroll: function () {
-            //     var self = this;
-            //     // eslint-disable-next-line no-undef
-            //     var $navs = $(".catg-list-nav-cur");
-            //     // eslint-disable-next-line no-console
-            //     console.log($navs)
-            //     var sections = document.getElementsByClassName('catg-item-main');
-            //     for (var i = sections.length - 1; i >= 0; i--) {
-            //         if (self.scroll >= sections[i].offsetTop - 100) {
-            //             $navs.eq(i).addClass("current").siblings().removeClass("current")
-            //             break;
-            //         }
-            //     }
-            // }
-        },
-        // watch: {
-        //     scroll: function () {
-        //         this.loadSroll()
-        //     }
-        // },
-        // mounted() {
-        //     window.addEventListener('scroll', this.dataScroll);
-        // }
-
-        watch: {
-            length: function () {
-                    this._getType_title()
-
-                }
-
             },
-
-            mounted() {
-                window.addEventListener('length',this._getType_title);
-                console.log(222)
-                console.log(this.length)
-                this._getType_title
+            jump(index){
+                let jump = document.getElementsByClassName('catg-item-main');
+                let total = jump[index].offsetTop;
+                // document.documentElement.scrollTop = total;
+                // window.pageYOffset = total;
+                $('html, body').animate({
+                    'scrollTop': total
+                }, 400);
+            },
+            dataScroll: function () {
+                this.scroll = document.documentElement.scrollTop || document.body.scrollTop;
             }
+        },
+    watch: {
+        scroll: function () {
+            // var navs = $(".catg-list-nav-cur");
+            this._getType_title()
+        }
+    },
+        beforeMount(){this._getType_title()},
+    mounted() {
+        // window.addEventListener('length', this._getType_title);
+        window.addEventListener('scroll', this.dataScroll);
+        console.log(6868);
+        this._getType_title()
+
+    }
+
     }
 </script>
 
@@ -144,8 +127,8 @@
 .classify_product{
     width: 2.95rem;
     /*height: 10rem;*/
-    overflow-y: auto;
-    height: calc(100vh - 0.44rem);
+    /*overflow-y: auto;*/
+    /*height: calc(100vh - 0.44rem);*/
     float: right;
     box-sizing: border-box;
     overflow: auto;
