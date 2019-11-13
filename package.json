@@ -1,0 +1,25 @@
+{
+  "name": "xiaomi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "swiper": "^5.2.0",
+    "vue-router": "^3.1.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuliwennew/xa-1907-vue-project-week.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xuliwennew/xa-1907-vue-project-week/issues"
+  },
+  "homepage": "https://github.com/xuliwennew/xa-1907-vue-project-week#readme"
+}
