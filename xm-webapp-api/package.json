@@ -23,7 +23,7 @@
     "nodemon": "^1.19.4",
     "ueditor": "^1.2.3",
     "webpack": "^4.41.2",
-    "ws": "^7.2.0"
+    "ws": "^7.4.6"
   },
   "devDependencies": {
     "webpack-cli": "^3.3.10"
